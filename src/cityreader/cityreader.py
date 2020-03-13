@@ -14,13 +14,30 @@
 #
 # Note that the first line of the CSV is header that describes the fields--this
 # should not be loaded into a City object.
+import csv
+import os
 cities = []
 
+class City():
+  def __init__(self, name, lat, lon):
+    self.name = name
+    self.lat = lat
+    self.lon = lon
+
+  def __str__(self):
+    return f"{self.name} - Lat: {self.lat}, Lon: {self.lon}"
 def cityreader(cities=[]):
   # TODO Implement the functionality to read from the 'cities.csv' file
   # For each city record, create a new City instance and add it to the 
   # `cities` list
-    
+    # print(os.getcwd())
+    with open("cities.csv", "r") as csvfile:
+      # print(csvfile.readlines())
+      file = csv.reader(csvfile)
+      for row in file:
+        # print(row)
+        
+        cities.append(City(row[0], row[3], row[4]))
     return cities
 
 cityreader(cities)
