@@ -27,8 +27,7 @@ class GroundVehicle(Vehicle):
         super().__init__()
         pass
 
-    def drive(self):
-        return "vrooom"
+
 
 class FlightVehicle(Vehicle):
     def __init__(self):
