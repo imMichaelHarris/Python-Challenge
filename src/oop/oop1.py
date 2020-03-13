@@ -17,6 +17,7 @@
 #     pass
 #
 # Put a comment noting which class is the base class
+#Base Class for all vehicles
 class Vehicle():
     def __init__(self):
         pass
@@ -25,6 +26,9 @@ class GroundVehicle(Vehicle):
     def __init__(self):
         super().__init__()
         pass
+
+    def drive(self):
+        return "vrooom"
 
 class FlightVehicle(Vehicle):
     def __init__(self):
